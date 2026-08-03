@@ -7,8 +7,6 @@ A **VS Code extension** that sorts and removes duplicate lines instantly. Select
 ![Lint · Biome](https://www.shieldcn.dev/badge/Lint-Biome-60A5FA.svg?logo=biome&variant=branded&mode=light&font=jetbrains-mono)
 ![VS Code Marketplace](https://www.shieldcn.dev/badge/VS_Code-Marketplace-1e1e1e.svg?logo=visualstudio&variant=branded&mode=light&font=jetbrains-mono)
 
----
-
 ## Installation
 
 ### From Marketplace
@@ -36,16 +34,12 @@ bun run package
 code --install-extension sort-unique-lines-*.vsix
 ```
 
----
-
 ## Usage
 
 1. Select lines in any editor (or select nothing to process the entire file)
 2. Press **F9**
 3. The selection is replaced with sorted, deduplicated lines
 4. Undo with `Ctrl+Z` as usual
-
----
 
 ## Features
 
@@ -56,8 +50,6 @@ code --install-extension sort-unique-lines-*.vsix
 - Case-sensitive mode available
 - Works on selection or the entire file
 - Zero runtime dependencies
-
----
 
 ## Configuration
 
@@ -70,14 +62,10 @@ All settings live under **File > Preferences > Settings** → search "Sort & Uni
 | `sort-unique-lines.removeBlankLines` | `boolean` | `true` | Strip empty and whitespace-only lines |
 | `sort-unique-lines.trimLines` | `boolean` | `true` | Trim whitespace from each line before sorting |
 
----
-
 ## Keybinding
 
 Default: **`F9`**  
 Change it in **File > Preferences > Keyboard Shortcuts** → search "Sort & Unique Lines".
-
----
 
 ## Development
 
@@ -92,8 +80,6 @@ bun run package      # build .vsix
 Requires [Bun](https://bun.sh) and [VS Code](https://code.visualstudio.com) 1.125+.
 
 Built with Bun + TypeScript + Biome. Zero runtime dependencies.
-
----
 
 ## License
 
