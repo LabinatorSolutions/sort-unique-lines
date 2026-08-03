@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { sortUniqueLines } from "./sortLines";
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand("sort-unique-lines.run", () => {
@@ -8,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     const config = vscode.workspace.getConfiguration("sort-unique-lines");
-    const sortOrder = config.get<string>("sortOrder", "ascending");
+    const sortOrder = config.get<"ascending" | "descending">("sortOrder", "ascending");
     const caseSensitive = config.get<boolean>("caseSensitive", false);
     const removeBlankLines = config.get<boolean>("removeBlankLines", true);
     const trimLines = config.get<boolean>("trimLines", true);
@@ -35,44 +36,13 @@ export function activate(context: vscode.ExtensionContext) {
 
     const text = document.getText(range);
     const eol = document.eol === vscode.EndOfLine.CRLF ? "\r\n" : "\n";
-    let lines = text.split(/\r?\n/);
 
-    if (trimLines) {
-      lines = lines.map((l) => l.trim());
-    }
-
-    if (removeBlankLines) {
-      lines = lines.filter((l) => l.length > 0);
-    }
-
-    const cmp = (a: string, b: string): number => {
-      const ca = caseSensitive ? a : a.toLowerCase();
-      const cb = caseSensitive ? b : b.toLowerCase();
-      if (ca < cb) {
-        return -1;
-      }
-      if (ca > cb) {
-        return 1;
-      }
-      return 0;
-    };
-
-    lines.sort((a, b) => (sortOrder === "descending" ? cmp(b, a) : cmp(a, b)));
-
-    const unique: string[] = [];
-    for (const line of lines) {
-      if (unique.length === 0) {
-        unique.push(line);
-        continue;
-      }
-      const last = unique[unique.length - 1];
-      const same = caseSensitive ? last === line : last.toLowerCase() === line.toLowerCase();
-      if (!same) {
-        unique.push(line);
-      }
-    }
-
-    const result = unique.join(eol);
+    const result = sortUniqueLines(text, eol, {
+      sortOrder,
+      caseSensitive,
+      removeBlankLines,
+      trimLines,
+    });
 
     return editor.edit((editBuilder) => {
       editBuilder.replace(range, result);

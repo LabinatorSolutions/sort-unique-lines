@@ -1,11 +1,11 @@
 # Sort & Unique Lines
 
-A **VS Code extension** that sorts and removes duplicate lines instantly. Select specific lines or leave unselected to process the entire file, then press F9.
+A **VS Code extension** that sorts and removes duplicate lines instantly. Select specific lines or leave unselected to process the entire file, then press `Alt+W`.
 
-![Package mgr · Bun](https://www.shieldcn.dev/badge/Package_mgr-Bun-000000.svg?logo=bun&variant=branded&mode=light&font=jetbrains-mono)
-![Language · TypeScript](https://www.shieldcn.dev/badge/Language-TypeScript-3178C6.svg?logo=typescript&variant=branded&mode=light&font=jetbrains-mono)
-![Lint · Biome](https://www.shieldcn.dev/badge/Lint-Biome-60A5FA.svg?logo=biome&variant=branded&mode=light&font=jetbrains-mono)
-![VS Code Marketplace](https://www.shieldcn.dev/badge/VS_Code-Marketplace-1e1e1e.svg?logo=visualstudio&variant=branded&mode=light&font=jetbrains-mono)
+![Package mgr · Bun](https://img.shields.io/badge/Package_mgr-Bun-000000.svg?logo=bun)
+![Language · TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6.svg?logo=typescript)
+![Lint · Biome](https://img.shields.io/badge/Lint-Biome-60A5FA.svg?logo=biome)
+![VS Code Marketplace](https://img.shields.io/badge/VS_Code-Marketplace-1e1e1e.svg?logo=visualstudio)
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or search "Sort & Unique Lines" in the Extensions view (`Ctrl+Shift+X`).
 Download the `.vsix` file from [releases](https://github.com/LabinatorSolutions/sort-unique-lines/releases), then:
 
 ```bash
-code --install-extension sort-unique-lines-1.0.0.vsix
+code --install-extension sort-unique-lines-1.1.0.vsix
 ```
 
 ### From Source
@@ -37,7 +37,7 @@ code --install-extension sort-unique-lines-*.vsix
 ## Usage
 
 1. Select lines in any editor (or select nothing to process the entire file)
-2. Press **F9**
+2. Press **`Alt+W`**
 3. The selection is replaced with sorted, deduplicated lines
 4. Undo with `Ctrl+Z` as usual
 
@@ -64,7 +64,7 @@ All settings live under **File > Preferences > Settings** → search "Sort & Uni
 
 ## Keybinding
 
-Default: **`F9`**  
+Default: **`Alt+W`**  
 Change it in **File > Preferences > Keyboard Shortcuts** → search "Sort & Unique Lines".
 
 ## Development
@@ -72,6 +72,7 @@ Change it in **File > Preferences > Keyboard Shortcuts** → search "Sort & Uniq
 ```bash
 bun install          # install dependencies
 bun run compile      # compile TypeScript → out/
+bun test             # run unit tests
 bun run lint         # lint with Biome
 bun run format       # format with Biome
 bun run package      # build .vsix
