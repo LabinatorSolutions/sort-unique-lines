@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- Docs: add Credits section (publisher + tooling)
+
 ## 1.1.1
 
 - Docs: badges in README now link to their respective sites/listing instead of being static images

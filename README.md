@@ -20,7 +20,7 @@ Or search "Sort & Unique Lines" in the Extensions view (`Ctrl+Shift+X`).
 Download the `.vsix` file from [releases](https://github.com/LabinatorSolutions/sort-unique-lines/releases), then:
 
 ```bash
-code --install-extension sort-unique-lines-1.1.1.vsix
+code --install-extension sort-unique-lines-1.1.2.vsix
 ```
 
 ### From Source
@@ -81,6 +81,12 @@ bun run package      # build .vsix
 Requires [Bun](https://bun.sh) and [VS Code](https://code.visualstudio.com) 1.125+.
 
 Built with Bun + TypeScript + Biome. Zero runtime dependencies.
+
+## Credits
+
+Built by [Labinator](https://labinator.com).
+
+Powered by [Bun](https://bun.sh), [TypeScript](https://www.typescriptlang.org), and [Biome](https://biomejs.dev).
 
 ## License
 
