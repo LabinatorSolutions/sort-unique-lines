@@ -5,10 +5,17 @@ A **VS Code extension** that sorts and removes duplicate lines instantly. Select
 ![Package mgr · Bun](https://www.shieldcn.dev/badge/Package_mgr-Bun-000000.svg?logo=bun&variant=branded&mode=light&font=jetbrains-mono)
 ![Language · TypeScript](https://www.shieldcn.dev/badge/Language-TypeScript-3178C6.svg?logo=typescript&variant=branded&mode=light&font=jetbrains-mono)
 ![Lint · Biome](https://www.shieldcn.dev/badge/Lint-Biome-60A5FA.svg?logo=biome&variant=branded&mode=light&font=jetbrains-mono)
+![VS Code Marketplace](https://www.shieldcn.dev/badge/VS_Code-Marketplace-1e1e1e.svg?logo=visualstudio&variant=branded&mode=light&font=jetbrains-mono)
 
 ---
 
 ## Installation
+
+### From Marketplace
+
+**[Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Labinator.sort-unique-lines)**
+
+Or search "Sort & Unique Lines" in the Extensions view (`Ctrl+Shift+X`).
 
 ### From VSIX
 
