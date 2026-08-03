@@ -2,7 +2,7 @@
   "name": "sort-unique-lines",
   "displayName": "Sort & Unique Lines",
   "description": "Sort lines and remove duplicates in one keystroke. Select text (or nothing for the whole file), press a key, done.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "labinator",
   "license": "AGPL-3.0",
   "repository": {

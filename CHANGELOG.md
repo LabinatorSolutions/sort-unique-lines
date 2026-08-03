@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Docs: badges in README now link to their respective sites/listing instead of being static images
+
 ## 1.1.0
 
 - Fix: `removeBlankLines` now strips whitespace-only lines even when `trimLines` is disabled

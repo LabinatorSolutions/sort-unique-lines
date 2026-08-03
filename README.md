@@ -2,10 +2,10 @@
 
 A **VS Code extension** that sorts and removes duplicate lines instantly. Select specific lines or leave unselected to process the entire file, then press `Alt+W`.
 
-![Package mgr · Bun](https://img.shields.io/badge/Package_mgr-Bun-000000.svg?logo=bun)
-![Language · TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6.svg?logo=typescript)
-![Lint · Biome](https://img.shields.io/badge/Lint-Biome-60A5FA.svg?logo=biome)
-![VS Code Marketplace](https://img.shields.io/badge/VS_Code-Marketplace-1e1e1e.svg?logo=visualstudio)
+[![Package mgr · Bun](https://img.shields.io/badge/Package_mgr-Bun-000000.svg?logo=bun)](https://bun.sh)
+[![Language · TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6.svg?logo=typescript)](https://www.typescriptlang.org)
+[![Lint · Biome](https://img.shields.io/badge/Lint-Biome-60A5FA.svg?logo=biome)](https://biomejs.dev)
+[![VS Code Marketplace](https://img.shields.io/badge/VS_Code-Marketplace-1e1e1e.svg?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=Labinator.sort-unique-lines)
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or search "Sort & Unique Lines" in the Extensions view (`Ctrl+Shift+X`).
 Download the `.vsix` file from [releases](https://github.com/LabinatorSolutions/sort-unique-lines/releases), then:
 
 ```bash
-code --install-extension sort-unique-lines-1.1.0.vsix
+code --install-extension sort-unique-lines-1.1.1.vsix
 ```
 
 ### From Source
