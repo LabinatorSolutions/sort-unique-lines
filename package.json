@@ -1,0 +1,99 @@
+{
+  "name": "sort-unique-lines",
+  "displayName": "Sort & Unique Lines",
+  "description": "Sort lines and remove duplicates in one keystroke. Select text (or nothing for the whole file), press a key, done.",
+  "version": "1.0.0",
+  "publisher": "labinator",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LabinatorSolutions/sort-unique-lines"
+  },
+  "homepage": "https://github.com/LabinatorSolutions/sort-unique-lines#readme",
+  "bugs": {
+    "url": "https://github.com/LabinatorSolutions/sort-unique-lines/issues"
+  },
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "sort",
+    "unique",
+    "deduplicate",
+    "lines",
+    "remove duplicates"
+  ],
+  "activationEvents": [
+    "onCommand:sort-unique-lines.run"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sort-unique-lines.run",
+        "title": "Sort & Unique Lines"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "sort-unique-lines.run",
+        "key": "f9",
+        "when": "editorTextFocus && !editorReadonly"
+      }
+    ],
+    "configuration": {
+      "title": "Sort & Unique Lines",
+      "properties": {
+        "sort-unique-lines.sortOrder": {
+          "type": "string",
+          "enum": [
+            "ascending",
+            "descending"
+          ],
+          "default": "ascending",
+          "description": "Sort direction for lines."
+        },
+        "sort-unique-lines.caseSensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, sort and deduplication treat uppercase and lowercase as different."
+        },
+        "sort-unique-lines.removeBlankLines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Remove empty/whitespace-only lines from the result."
+        },
+        "sort-unique-lines.trimLines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Trim leading and trailing whitespace from each line before sorting."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "bun run compile",
+    "compile": "tsc -p ./",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "ci": "biome ci .",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.6",
+    "@types/vscode": "^1.125.0",
+    "@vscode/vsce": "^3.9.2",
+    "typescript": "^7.0.2"
+  }
+}

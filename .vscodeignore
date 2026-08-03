@@ -1,0 +1,11 @@
+.vscode/**
+.vscodeignore
+src/**
+node_modules/**
+.git/**
+.gitignore
+*.vsix
+biome.json
+bun.lock
+tsconfig.json
+icon.svg
