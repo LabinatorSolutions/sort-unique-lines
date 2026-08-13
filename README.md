@@ -7,6 +7,10 @@ A **VS Code extension** that sorts and removes duplicate lines instantly. Select
 [![Lint · Biome](https://img.shields.io/badge/Lint-Biome-60A5FA.svg?logo=biome)](https://biomejs.dev)
 [![VS Code Marketplace](https://img.shields.io/badge/VS_Code-Marketplace-1e1e1e.svg?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=Labinator.sort-unique-lines)
 
+## Requirements
+
+VS Code **1.130 or newer**. Older builds will not list or install this extension.
+
 ## Installation
 
 ### From Marketplace
@@ -80,10 +84,12 @@ bun run compile      # compile TypeScript → out/
 bun test             # run unit tests
 bun run lint         # lint with Biome
 bun run format       # format with Biome
+bun run ci           # lint + format check, no writes (used in CI)
 bun run package      # build .vsix
+bun run build        # format, lint, compile, test, package
 ```
 
-Requires [Bun](https://bun.sh) and [VS Code](https://code.visualstudio.com) 1.130+.
+Requires [Bun](https://bun.sh).
 
 Built with Bun + TypeScript + Biome. Zero runtime dependencies.
 
