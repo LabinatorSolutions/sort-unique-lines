@@ -16,30 +16,31 @@ export function sortUniqueLines(text: string, eol: string, options: SortOptions)
     lines = lines.filter((l) => l.trim().length > 0);
   }
 
-  const cmp = (a: string, b: string): number => {
-    const ca = options.caseSensitive ? a : a.toLowerCase();
-    const cb = options.caseSensitive ? b : b.toLowerCase();
-    if (ca < cb) {
-      return -1;
+  // Compute the comparison key once per line rather than inside the comparator,
+  // which would lowercase every line O(log n) times over.
+  const keyed = lines.map((line) => ({
+    line,
+    key: options.caseSensitive ? line : line.toLowerCase(),
+  }));
+
+  const direction = options.sortOrder === "descending" ? -1 : 1;
+  keyed.sort((a, b) => {
+    if (a.key < b.key) {
+      return -direction;
     }
-    if (ca > cb) {
-      return 1;
+    if (a.key > b.key) {
+      return direction;
     }
     return 0;
-  };
+  });
 
-  lines.sort((a, b) => (options.sortOrder === "descending" ? cmp(b, a) : cmp(a, b)));
-
+  // Equal keys are adjacent after sorting, so a single pass dedupes.
   const unique: string[] = [];
-  for (const line of lines) {
-    if (unique.length === 0) {
+  let previousKey: string | undefined;
+  for (const { line, key } of keyed) {
+    if (key !== previousKey) {
       unique.push(line);
-      continue;
-    }
-    const last = unique[unique.length - 1];
-    const same = options.caseSensitive ? last === line : last.toLowerCase() === line.toLowerCase();
-    if (!same) {
-      unique.push(line);
+      previousKey = key;
     }
   }
 

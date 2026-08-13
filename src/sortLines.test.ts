@@ -43,4 +43,28 @@ describe("sortUniqueLines", () => {
     const result = sortUniqueLines("b\na", "\r\n", base);
     expect(result).toBe("a\r\nb");
   });
+
+  test("keeps the first occurrence of a case-insensitive duplicate", () => {
+    const result = sortUniqueLines("zZz\nZZZ\nzzz", "\n", base);
+    expect(result).toBe("zZz");
+  });
+
+  test("keeps the first occurrence when sorting descending", () => {
+    const result = sortUniqueLines("b\nB\na", "\n", { ...base, sortOrder: "descending" });
+    expect(result).toBe("b\na");
+  });
+
+  test("splits CRLF input regardless of the requested output eol", () => {
+    const result = sortUniqueLines("b\r\na\r\nb", "\n", base);
+    expect(result).toBe("a\nb");
+  });
+
+  test("returns an empty string when every line is stripped", () => {
+    const result = sortUniqueLines("\n  \n\t\n", "\n", base);
+    expect(result).toBe("");
+  });
+
+  test("handles a single line with no separator", () => {
+    expect(sortUniqueLines("solo", "\n", base)).toBe("solo");
+  });
 });

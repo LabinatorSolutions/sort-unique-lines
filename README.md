@@ -20,7 +20,7 @@ Or search "Sort & Unique Lines" in the Extensions view (`Ctrl+Shift+X`).
 Download the `.vsix` file from [releases](https://github.com/LabinatorSolutions/sort-unique-lines/releases), then:
 
 ```bash
-code --install-extension sort-unique-lines-1.1.2.vsix
+code --install-extension sort-unique-lines-1.2.0.vsix
 ```
 
 ### From Source
@@ -41,6 +41,8 @@ code --install-extension sort-unique-lines-*.vsix
 3. The selection is replaced with sorted, deduplicated lines
 4. Undo with `Ctrl+Z` as usual
 
+With multiple cursors, every selection is sorted independently in a single undo step. Selections that land on the same lines are merged first.
+
 ## Features
 
 - Sorts lines ascending or descending
@@ -48,7 +50,8 @@ code --install-extension sort-unique-lines-*.vsix
 - Trims leading/trailing whitespace (configurable)
 - Strips blank lines (configurable)
 - Case-sensitive mode available
-- Works on selection or the entire file
+- Works on a selection, several multi-cursor selections, or the entire file
+- Settings are language-overridable, so `.txt` can behave differently from source files
 - Zero runtime dependencies
 
 ## Configuration
@@ -61,6 +64,8 @@ All settings live under **File > Preferences > Settings** → search "Sort & Uni
 | `sort-unique-lines.caseSensitive` | `boolean` | `false` | Treat uppercase/lowercase as different |
 | `sort-unique-lines.removeBlankLines` | `boolean` | `true` | Strip empty and whitespace-only lines |
 | `sort-unique-lines.trimLines` | `boolean` | `true` | Trim whitespace from each line before sorting |
+
+All four are `language-overridable` — scope them per language with a `"[markdown]": { ... }` block in your settings.
 
 ## Keybinding
 
@@ -78,7 +83,7 @@ bun run format       # format with Biome
 bun run package      # build .vsix
 ```
 
-Requires [Bun](https://bun.sh) and [VS Code](https://code.visualstudio.com) 1.125+.
+Requires [Bun](https://bun.sh) and [VS Code](https://code.visualstudio.com) 1.130+.
 
 Built with Bun + TypeScript + Biome. Zero runtime dependencies.
 

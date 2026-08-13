@@ -1,5 +1,7 @@
 .vscode/**
 .vscodeignore
+.github/**
+.directory
 src/**
 node_modules/**
 .git/**
@@ -9,3 +11,4 @@ biome.json
 bun.lock
 tsconfig.json
 icon.svg
+out/**/*.map

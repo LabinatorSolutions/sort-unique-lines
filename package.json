@@ -2,7 +2,7 @@
   "name": "sort-unique-lines",
   "displayName": "Sort & Unique Lines",
   "description": "Sort lines and remove duplicates in one keystroke. Select text (or nothing for the whole file), press a key, done.",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "publisher": "labinator",
   "license": "AGPL-3.0",
   "repository": {
@@ -19,7 +19,7 @@
     "theme": "dark"
   },
   "engines": {
-    "vscode": "^1.125.0"
+    "vscode": "^1.130.0"
   },
   "categories": [
     "Formatters",
@@ -57,21 +57,25 @@
             "descending"
           ],
           "default": "ascending",
+          "scope": "language-overridable",
           "description": "Sort direction for lines."
         },
         "sort-unique-lines.caseSensitive": {
           "type": "boolean",
           "default": false,
+          "scope": "language-overridable",
           "description": "If true, sort and deduplication treat uppercase and lowercase as different."
         },
         "sort-unique-lines.removeBlankLines": {
           "type": "boolean",
           "default": true,
+          "scope": "language-overridable",
           "description": "Remove empty/whitespace-only lines from the result."
         },
         "sort-unique-lines.trimLines": {
           "type": "boolean",
           "default": true,
+          "scope": "language-overridable",
           "description": "Trim leading and trailing whitespace from each line before sorting."
         }
       }

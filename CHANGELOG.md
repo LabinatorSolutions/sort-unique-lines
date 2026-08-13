@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0
+
+- Change: minimum VS Code raised to 1.130
+- Add: multi-cursor support — each selection is sorted independently; overlapping selections are merged
+- Add: settings are `language-overridable`, so sort behaviour can differ per language
+- Perf: comparison keys are computed once per line instead of on every comparator call
+- Fix: no edit is applied when the result is identical, so the file is no longer marked dirty and the undo stack stays clean
+- Build: `.github/`, `.directory`, and source maps are no longer shipped inside the `.vsix`
+
 ## 1.1.2
 
 - Docs: add Credits section (publisher + tooling)
