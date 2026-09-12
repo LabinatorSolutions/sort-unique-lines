@@ -81,6 +81,7 @@ Change it in **File > Preferences > Keyboard Shortcuts** → search "Sort & Uniq
 ```bash
 bun install          # install dependencies
 bun run compile      # compile TypeScript → out/
+bun run typecheck    # type-check only, no emit
 bun test             # run unit tests
 bun run lint         # lint with Biome
 bun run format       # format with Biome
@@ -90,6 +91,11 @@ bun run build        # format, lint, compile, test, package
 ```
 
 Requires [Bun](https://bun.sh).
+
+`@types/vscode` is held at the same version as `engines.vscode` and listed in `.ncurc.json`'s
+`reject`, so `ncu -u` leaves it alone. `vsce package` refuses to build when the types are newer
+than the declared engine, and raising `engines.vscode` to match a bumped types package would drop
+support for every older VS Code release. Move both together, deliberately, or not at all.
 
 Built with Bun + TypeScript + Biome. Zero runtime dependencies.
 

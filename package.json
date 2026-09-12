@@ -84,6 +84,7 @@
   "scripts": {
     "vscode:prepublish": "bun run compile",
     "compile": "tsc -p ./",
+    "typecheck": "tsc -p ./ --noEmit",
     "test": "bun test",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
@@ -95,8 +96,8 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.8",
-    "@types/vscode": "^1.125.0",
+    "@biomejs/biome": "2.5.13",
+    "@types/vscode": "^1.130.0",
     "@vscode/vsce": "^3.9.2",
     "typescript": "^7.0.2"
   }
